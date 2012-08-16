@@ -9,7 +9,7 @@ export http_proxy="http://$(echo $SSH_CONNECTION | cut -d= -f2 | awk '{print $1}
 
 # update packages
 aptitude update
-aptitude upgrade -q -y
+aptitude safe-upgrade -q -y
 
 # vbox guest additions
 aptitude install -y build-essential
