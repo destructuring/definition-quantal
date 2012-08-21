@@ -20,9 +20,6 @@ sh /mnt/VBoxLinuxAdditions.run
 umount /mnt
 rm -f "$pth_guestadditions"
 
-# disable proxy
-perl -pe 's{^(\s*Acquire::http::Proxy)}{#$1}' -i /etc/apt/apt.conf
-
 # udev cleanup
 rm -rf /etc/udev/rules.d/70-persistent-net.rules
 mkdir -p /etc/udev/rules.d/70-persistent-net.rules
