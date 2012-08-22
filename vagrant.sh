@@ -8,6 +8,9 @@ export DEBIAN_FRONTEND=noninteractive
 aptitude update
 aptitude safe-upgrade -q -y
 
+# git for deploy
+aptitude install -y git-core
+
 # vbox guest additions
 aptitude install -y build-essential
 
