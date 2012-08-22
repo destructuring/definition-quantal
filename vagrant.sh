@@ -28,4 +28,4 @@ rm -rf /etc/udev/rules.d/70-persistent-net.rules
 mkdir -p /etc/udev/rules.d/70-persistent-net.rules
 
 # wake up eth0
-echo "dhclient eth0" >> /etc/rc.local
+perl -pe 'm{exit 0} && print "dhclient eth0\n"' -i /etc/rc.local
