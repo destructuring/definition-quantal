@@ -18,9 +18,15 @@ sh /mnt/VBoxLinuxAdditions.run
 umount /mnt
 rm -f "$pth_guestadditions"
 
-# prevent udev from caching eth0 MAC
-rm -rf /etc/udev/rules.d/70-persistent-net.rules
-mkdir -p /etc/udev/rules.d/70-persistent-net.rules
-
 # wake up eth0
 perl -pe 'm{exit 0} && print "dhclient eth0\n"' -i /etc/rc.local
+
+# remove cached network configurations
+rm -f /etc/udev/rules.d/70-persistent-net.rules
+mkdir -p /etc/udev/rules.d/70-persistent-net.rules
+rm /lib/udev/rules.d/75-persistent-net-generator.rules
+rm -rf /dev/.udev/ /var/lib/dhcp3/*
+
+# zero out virtual disk for compression
+dd if=/dev/zero of=/EMPTY bs=1M
+rm -f /EMPTY
