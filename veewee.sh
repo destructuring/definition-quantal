@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -feux
 
 umask 022
 
@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND="noninteractive"
 
 # update packages
 aptitude update
-aptitude search -F '%c %p' linux-image-[0123456789] | grep ^i | awk '{print $2}' | cut -d- -f3- | sed 's#^#linux-headers-#' | xargs aptitude install -q -y rsync wget curl
+aptitude install -q -y linux-server linux-headers-server linux-image-server linux-headers
 aptitude hold linux-server linux-headers-server linux-image-server linux-headers
 aptitude clean
 

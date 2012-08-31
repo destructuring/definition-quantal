@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -feux
 
 umask 022
 
@@ -8,12 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 aptitude update
 aptitude safe-upgrade -q -y
 
-# git for deploy
-aptitude install -y git-core
-
 # vbox guest additions
-aptitude install -y build-essential
-
 ver_virtualbox="$(cat .vbox_version)"
 url_guestadditions="http://download.virtualbox.org/virtualbox/$ver_virtualbox/VBoxGuestAdditions_$ver_virtualbox.iso"
 pth_guestadditions="$HOME/VBoxGuestAdditions_$ver_virtualbox.iso"
