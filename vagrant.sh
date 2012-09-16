@@ -26,7 +26,3 @@ rm -f /etc/udev/rules.d/70-persistent-net.rules
 mkdir -p /etc/udev/rules.d/70-persistent-net.rules
 rm /lib/udev/rules.d/75-persistent-net-generator.rules
 rm -rf /dev/.udev/ /var/lib/dhcp3/*
-
-# zero out virtual disk for compression
-dd if=/dev/zero of=/EMPTY bs=1M
-rm -f /EMPTY
