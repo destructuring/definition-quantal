@@ -1,35 +1,18 @@
 --- 
-repository:
-application:
+repository: https://github.com/destructuring/definition-XXX
+application: XXX
 
-user:
-group:
+user: nobody
+group: nobody
 
-ruby_loader:
-deploy_ruby: ree
-app_ruby:
+ruby_loader: /usr/local/rvm/bin/rvm-exec
+deploy_ruby: default
+app_ruby: default
 
-branches: [ production staging master ]
-branch_regex: ^
+branches: [ master ]
+branch_regex: /
 
-chef_path: 
+chef_path: .
 
 notify:
-  email:
-    recipients: 
-    - 
-  campfire:
-    account:
-    room:
-    email:
-    token:
-  airbrake:
-    api_key:
-  flowdock:
-    api_token:
-    project:
-    from:
-      name:
-      address:
-    tags:
-    - deploy
+  nothing:
