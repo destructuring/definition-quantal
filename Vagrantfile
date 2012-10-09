@@ -6,6 +6,5 @@ Vagrant::Config.run do |cfg|
     config.vm.box = vcfg["box"]
     config.vm.host_name = File.basename(File.dirname(__FILE__))
     config.ssh.username = "root"
-    config.vm.provision :shell, :path => vcfg["provision"] if vcfg["provision"] && File.exists?(File.join(File.dirname(File.expand_path("..", __FILE__)), vcfg["provision"]))
   end
 end

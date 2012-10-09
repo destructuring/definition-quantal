@@ -15,8 +15,7 @@ namespace :ubuntu do
   end
 
   task :restart do
-    run "cd #{deploy_to} && #{ruby_loader} bin/local-helper vagrant up || true"
-    run "cd #{deploy_to} && #{ruby_loader} bin/local-helper vagrant provision"
+    run "cd #{deploy_to} && (#{ruby_loader} bin/local-helper vagrant up || #{ruby_loader} bin/local-helper vagrant provision)"
   end
 
   task :hack do
