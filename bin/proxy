@@ -13,7 +13,7 @@
 shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
 
 # load a jason bourne library
-source "$shome/bin/_treadstone"
+source "$shome/libexec/_treadstone"
 get_started
 
 function git_branch_head {
@@ -52,7 +52,7 @@ if [[ -z "$_AO_PROXIED" ]]; then
 fi
 
 # load a jason bourne library
-source "$shome/bin/_treadstone"
+source "$shome/libexec/_treadstone"
 
 # entry point
 function main {

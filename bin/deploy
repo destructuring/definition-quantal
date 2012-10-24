@@ -49,7 +49,7 @@
 shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
 
 # load a jason bourne library
-source "$shome/bin/_treadstone"
+source "$shome/libexec/_treadstone"
 
 # ensure script runs under rvm
 function enforce_rvm {
