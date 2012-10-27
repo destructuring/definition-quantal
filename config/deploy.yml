@@ -1,6 +1,6 @@
 --- 
-repository: https://github.com/destructuring/definition-XXX
-application: XXX
+repository: https://github.com/destructuring/definition-quantal
+application: quantal
 
 user: nobody
 group: nobody

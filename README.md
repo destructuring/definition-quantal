@@ -1,4 +1,4 @@
 definition-quantal
 ==================
 
-Ubuntu 12.10 distribution for Johnny
+vagrant definition for a quantal distro box

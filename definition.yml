@@ -18,3 +18,5 @@
 :postinstall_files:
 - veewee.sh
 :postinstall_timeout: '10000'
+:iso_file: ubuntu-12.10-server-amd64-unattended.iso
+:iso_src: http://releases.ubuntu.com/lucid/ubuntu-12.10-server-amd64.iso
