@@ -16,10 +16,13 @@ sh /mnt/VBoxLinuxAdditions.run
 umount /mnt
 
 # remove cached network configurations
-rm -f /etc/udev/rules.d/70-persistent-net.rules
-mkdir -p /etc/udev/rules.d/70-persistent-net.rules
-rm /lib/udev/rules.d/75-persistent-net-generator.rules
-rm -rf /dev/.udev/ /var/lib/dhcp3/*
+rm -fv /etc/udev/rules.d/70-persistent-net.rules
+mkdir -pv /etc/udev/rules.d/70-persistent-net.rules
+rm -fv /lib/udev/rules.d/75-persistent-net-generator.rules
+rm -rfv /dev/.udev/ /var/lib/dhcp3/*
+
+# don't see a battery
+rm -fv /etc/dbus-1/system.d/org.freedesktop.UPower.conf
 
 # wake up eth0
 perl -pe 'm{exit 0} && print "dhclient eth0\n"' -i /etc/rc.local
