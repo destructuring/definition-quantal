@@ -26,7 +26,7 @@ end
 
 namespace :deploy do
   task :bundle do
-    run "cd #{deploy_release} && bin/build ruby"
+    run "cd #{deploy_release} && #{ruby_loader} bin/build ruby"
   end
 end
 
