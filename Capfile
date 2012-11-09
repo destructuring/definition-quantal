@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'alpha_omega/deploy'
-load 'config/deploy'
 
 # application deploy
 namespace :ubuntu do
@@ -15,7 +14,7 @@ namespace :ubuntu do
   end
 
   task :restart do
-    run "cd #{deploy_to} && (#{ruby_loader} bin/local-helper vagrant up || #{ruby_loader} bin/local-helper vagrant provision)"
+    run "cd #{deploy_to} && (#{ruby_loader} bundle exec vagrant up || #{ruby_loader} bundle exec vagrant provision)"
   end
 
   task :hack do

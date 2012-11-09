@@ -2,17 +2,8 @@
 repository: https://github.com/destructuring/definition-XXX
 application: XXX
 
-user: nobody
-group: nobody
-
-ruby_loader: /usr/local/rvm/bin/rvm-exec
-deploy_ruby: default
+ruby_loader: rvm-exec
 app_ruby: default
 
 branches: [ master ]
 branch_regex: /
-
-chef_path: .
-
-notify:
-  nothing:
