@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#/ NAME
+#/     bundle-ruby -- bundle release with bundler and rvm
+#/
+#/ SYNOPSIS
+#/     
+#/     bundle-ruby ruby_loader ruby bundler_options
+
+
+# figure out the project root under which bin, lib live
+shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+
+# load a jason bourne library
+source "$shome/libexec/_treadstone"
+
+# entry point
+function main {
+  if [[ ! -f "$shome/Gemfile" ]]; then
+    exit 0
+  fi
+
+  if ! bundle check 2>&1 > /dev/null; then
+    bundle install --quiet --local "$@"
+    bundle check > /dev/null
+  fi
+}
+
+require sub "$BASH_SOURCE" "$@"
