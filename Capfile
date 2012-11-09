@@ -24,6 +24,12 @@ namespace :ubuntu do
   end
 end
 
+namespace :deploy do
+  task :bundle do
+    run "cd #{deploy_release} && bin/build ruby"
+  end
+end
+
 # hooks into alpha_omega deploy
 after "deploy:localdomain", "ubuntu:overrides"
 before "deploy:update_code", "ubuntu:hack"
