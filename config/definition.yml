@@ -16,5 +16,5 @@ ssh_guest_port: '22'
 sudo_cmd: bash '%f'
 shutdown_cmd: shutdown -P now
 postinstall_files:
-- veewee.sh
+- libexec/veewee.sh
 postinstall_timeout: '10000'
