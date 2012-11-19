@@ -1,9 +1,7 @@
+/vendor/bundle
+/.bundle
 /cache
 /backup
 /.tmp
+*.orig
 /REVISION
-/.bundle
-/vendor/bundle
-/.ssh_config
-/.ssh_known_hosts
-/.vagrant

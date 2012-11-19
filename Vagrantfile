@@ -6,5 +6,6 @@ Vagrant::Config.run do |cfg|
     config.vm.box = vcfg["box"]
     config.vm.host_name = File.basename(File.dirname(__FILE__))
     config.ssh.username = "root"
+    config.vm.provision :shell, :path => vcfg["provision"]
   end
 end
