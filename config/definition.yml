@@ -16,7 +16,7 @@ ssh_guest_port: '22'
 sudo_cmd: bash '%f'
 shutdown_cmd: shutdown -P now
 postinstall_files:
-- veewee.sh
+- libexec/veewee.sh
 postinstall_timeout: '10000'
 iso_file: ubuntu-12.10-server-amd64-unattended.iso
 iso_src: http://releases.ubuntu.com/lucid/ubuntu-12.10-server-amd64.iso

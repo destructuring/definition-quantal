@@ -19,8 +19,7 @@ namespace :ubuntu do
 
   task :hack do
     run "[[ -d #{deploy_release}/.git ]] || rm -rf #{deploy_release}/log"
-    run "[[ -d #{deploy_release}/.git ]] || rmdir #{deploy_release}/cache"
-    run "[[ -d #{deploy_release}/.git ]] || rmdir #{deploy_release}/service"
+    run "[[ -d #{deploy_release}/.git ]] || rmdir #{deploy_release}/cache #{deploy_release}/service"
   end
 end
 
@@ -32,8 +31,8 @@ end
 
 # hooks into alpha_omega deploy
 after "deploy:localdomain", "ubuntu:overrides"
-before "deploy:update_code", "ubuntu:hack"
-after "deploy:cook", "microwave:cook"
+before "deploy:scm", "ubuntu:hack"
+after "deploy:scm", "deploy:bootstrap_code"
 after "deploy:restart", "ubuntu:restart"
 
 # interesting hosts

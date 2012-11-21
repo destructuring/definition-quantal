@@ -2,12 +2,6 @@
 
 umask 022
 
-export DEBIAN_FRONTEND=noninteractive
-
-# update packages
-aptitude update
-aptitude safe-upgrade -q -y
-
 # vbox guest additions
 ver_virtualbox="$(cat .vbox_version)"
 pth_guestadditions="$HOME/VBoxGuestAdditions_$ver_virtualbox.iso"
