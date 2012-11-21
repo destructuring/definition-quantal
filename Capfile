@@ -18,9 +18,7 @@ namespace :ubuntu do
   end
 
   task :hack do
-    run "[[ -d #{deploy_release}/.git ]] || rm -rf #{deploy_release}/log"
-    run "[[ -d #{deploy_release}/.git ]] || rmdir #{deploy_release}/cache"
-    run "[[ -d #{deploy_release}/.git ]] || rmdir #{deploy_release}/service"
+    run "[[ -d #{deploy_release}/.git ]] || rmdir #{deploy_release}/log #{deploy_release}/cache #{deploy_release}/service"
   end
 end
 
