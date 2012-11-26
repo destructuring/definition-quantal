@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND="noninteractive"
 
 # update packages
 aptitude update
-aptitude install -q -y linux-virtual linux-headers-virtual linux-image-virtual linux-headers dkms
+aptitude install -q -y linux-virtual linux-headers-virtual linux-image-virtual linux-headers
 aptitude install -q -y ntp
 aptitude hold linux-virtual linux-headers-virtual linux-image-virtual linux-headers
 aptitude safe-upgrade -q -y

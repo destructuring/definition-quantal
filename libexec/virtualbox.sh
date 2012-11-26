@@ -2,6 +2,14 @@
 
 umask 022
 
+
+# dont prompt
+export DEBIAN_FRONTEND="noninteractive"
+
+# update packages
+aptitude install -q -y dkms
+aptitude clean
+
 # vbox guest additions
 ver_virtualbox="$(cat .vbox_version)"
 pth_guestadditions="$HOME/VBoxGuestAdditions_$ver_virtualbox.iso"
