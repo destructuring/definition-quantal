@@ -9,7 +9,7 @@ export DEBIAN_FRONTEND="noninteractive"
 aptitude update
 aptitude safe-upgrade -q -y
 aptitude install -q -y linux-headers ntp
-aptitude hold linux-{,-{headers,image}}{generic,server} linux-headers
+aptitude hold linux-{,{headers,image}-}{generic,server} linux-headers
 aptitude clean
 
 # ssh key
