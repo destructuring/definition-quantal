@@ -1,6 +1,5 @@
 ---
 remotes:
-  primary: git@github.com:destructuring/definition-basebox
-  secondary: git@bitbucket.org:destructuring/definition-basebox
-  sh: https://github.com/destructuring/jason
-  bump: https://github.com/destructuring/mixin-bump
+  vendor: https://github.com/destructuring/definition-basebox
+  primary: git@github.com:destructuring/definition-distro
+  secondary: git@bitbucket.org:destructuring/definition-distro
