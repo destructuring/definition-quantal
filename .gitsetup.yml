@@ -1,5 +1,5 @@
 ---
 remotes:
-  vendor: https://github.com/destructuring/definition-basebox
-  primary: git@github.com:destructuring/definition-distro
-  secondary: git@bitbucket.org:destructuring/definition-distro
+  vendor: https://github.com/destructuring/definition-distro
+  primary: git@github.com:destructuring/definition-quantal
+  secondary: git@bitbucket.org:destructuring/definition-quantal
